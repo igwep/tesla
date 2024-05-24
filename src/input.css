@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family:'TESLA' ;
+    src: url(/build/fonts/TESLA.ttf);
+}
