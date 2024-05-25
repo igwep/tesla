@@ -4,7 +4,7 @@ const linkMenu = document.querySelector('.links-menu');
 let linksMenuHtml = '';
 menu.forEach((menuItem) =>{
     linksMenuHtml += `
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col gap-5 items-center">
                     <div class="w-44">
                         <img src="${menuItem.image}" alt="" class="w-full">
                     </div>
