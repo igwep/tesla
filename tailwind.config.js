@@ -13,6 +13,9 @@ module.exports = {
       "another": "900px",
       "and":"800",
       "again":"1700px"
+    },
+    colors:{
+      "gray":"#222"
     }
     },
   },

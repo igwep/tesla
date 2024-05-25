@@ -17,6 +17,7 @@
     @media (max-width: 640px) {
             .bg-sm {
                 background-image: url('/build/images/homePage/Homepage-Model-Y-Mobile-Global.jpg');
+                background-position: 20% 30%;
             }
         }
         
@@ -44,34 +45,34 @@
   </style>
 <body class="">
  <div class="">
-    <div class="w-full h-screen md:bg-center bg-cover custom-background-position  bg-md bg-sm bg-md bg-lg bg-xl  " ><!-- hero -->
+    <div class="w-full h-[100vh] md:bg-center bg-cover   bg-md bg-sm bg-md bg-lg bg-xl  " ><!-- hero -->
        <div>
-         <div><!-- header container -->
-            <head class="">
-        <nav class="flex justify-between p-5 items-center">
-            <div><p class="font-tes tracking-widest">T E S L A</p></div><!-- logo -->
-            <div class="md:flex gap-4 font-semibold hidden">
-                <div><!-- links -->
+         <div class=" transition-all overflow-hidden link-head absolute w-full"><!-- header container -->
+            <head class="relative overflow-hidden w-full h-auto ">
+        <nav class="flex justify-between py-4 px-10 items-center mx-auto  ">
+            <div><p class="font-tes tracking-widest text-xl">T E S L A</p></div><!-- logo -->
+            <div class="md:flex gap-6 font-semibold hidden">
+                <div class="links cursor-pointer"><!-- links -->
                     <a href=""><div><!-- containers for link hover -->
                         <span>Vehicles</span>
                     </div></a>
                 </div>
-                <div>
-                    <a href=""><div><!-- containers for link hover -->fit
+                <div class="links cursor-pointer">
+                    <a href=""><div><!-- containers for link hover -->
                         <span>Energy</span>
                     </div></a>
                 </div>
-                <div>
+                <div class="links cursor-pointer">
                     <a href=""><div>  <!-- containers for link hover -->
                         <span>Charging</span>
                     </div></a>
                 </div>
-                <div>
+                <div class="links cursor-pointer">
                     <a href=""><div>  <!-- containers for link hover -->
                         <span>Discover</span>
                     </div></a>
                 </div>
-                <div>
+                <div class="links cursor-pointer">
                     <a href=""><div>  <!-- containers for link hover -->
                         <span>Shop</span>
                     </div></a>
@@ -95,18 +96,48 @@
                 <button class="px-3 py-1">Menu</button>
             </div>
         </nav>
-            </head>
-        </div>
-        <div class="w-full flex justify-center mt-14 and:mt-32"><!-- hero title -->
-          <div class="flex flex-col text-center ">
-            <div class="mb-3 border-b-2 border-black"><p class="text-4xl font-bold">Model Y</p>
-                <p class="text-3xl ">0.99% APR Financing</p>
+        <!-- link content -->
+        <div class="w-full flex justify-center">
+            <div>
+                <div>
+                    <img src="" alt="">
                 </div>
-                <div><p>From <span class="font-semibold">$299</span>/mo' Lease After Est.Gas Savings</p></div>
+                <div>
+                    <div><p>Model5</p></div>
+                    <div>
+                        <a href=""></a>
+                        <a href=""></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+            </head>
+
+
+
+
+        </div>
+        <div class="w-full flex justify-center h-[110vh] md:h-[100vh] again:h-[90vh]  "><!-- hero title -->
+          <div class="flex flex-col justify-between py-36 md:py-24 again:py-28 items-center w-full">
+            <div class="flex flex-col text-center ">
+                <div class="mb-3 "><p class="md:text-4xl text-3xl font-bold">Model Y</p>
+                    <p class="md:text-3xl text-2xl border-b-2 border-black ">0.99% APR Financing</p>
+                    </div>
+                    <div><p>From <span class="font-semibold">$299</span>/mo' Lease After Est.Gas Savings</p></div>
+              </div>
+              <div class="flex md:flex-row flex-col gap-5 w-full items-center justify-center">
+            <div class="bg-white md:w-[17%] w-[90%] p-2 rounded-md"><button class="w-full">Order Now</button></div>
+            <div class="bg-gray md:w-[17%] w-[90%] p-2 rounded-md text-white"><button class="w-full">Demo Drive</button></div>
+              </div>
+          </div>
+          <div>
+
           </div>
         </div>
        </div>
       </div>
  </div>
 </body>
+<script src="/js/app.js"></script>
 </html>

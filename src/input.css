@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.links-toggle{
+    @apply absolute bg-white h-56 w-full;
+}
 @font-face {
     font-family:'TESLA' ;
     src: url(/build/fonts/TESLA.ttf);
