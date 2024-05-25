@@ -15,7 +15,7 @@ module.exports = {
       "again":"1700px"
     },
     colors:{
-      "gray":"#222"
+      "grey":"#222"
     }
     },
   },
