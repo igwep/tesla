@@ -639,6 +639,10 @@ video {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .hidden {
   display: none;
 }
@@ -652,24 +656,16 @@ video {
   height: 100vh;
 }
 
-.h-\[90vh\] {
-  height: 90vh;
-}
-
-.h-\[120vh\] {
-  height: 120vh;
-}
-
-.h-\[140vh\] {
-  height: 140vh;
-}
-
 .h-\[110vh\] {
   height: 110vh;
 }
 
 .h-auto {
   height: auto;
+}
+
+.w-44 {
+  width: 11rem;
 }
 
 .w-\[90\%\] {
@@ -682,6 +678,10 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -762,29 +762,14 @@ video {
   padding-bottom: 0.25rem;
 }
 
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+.py-36 {
+  padding-top: 9rem;
+  padding-bottom: 9rem;
 }
 
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.py-24 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-
-.py-28 {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
-}
-
-.py-36 {
-  padding-top: 9rem;
-  padding-bottom: 9rem;
 }
 
 .text-center {
@@ -795,11 +780,6 @@ video {
   font-family: TESLA;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -808,6 +788,11 @@ video {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -835,7 +820,7 @@ video {
 
 .links-toggle {
   position: absolute;
-  height: 14rem;
+  height: auto;
   width: 100%;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -856,10 +841,6 @@ video {
     display: none;
   }
 
-  .md\:h-\[80vh\] {
-    height: 80vh;
-  }
-
   .md\:h-\[100vh\] {
     height: 100vh;
   }
@@ -874,11 +855,6 @@ video {
 
   .md\:bg-center {
     background-position: center;
-  }
-
-  .md\:py-12 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
   }
 
   .md\:py-24 {

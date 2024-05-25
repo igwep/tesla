@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .links-toggle{
-    @apply absolute bg-white h-56 w-full;
+    @apply absolute bg-white h-auto w-full;
 }
 @font-face {
     font-family:'TESLA' ;
