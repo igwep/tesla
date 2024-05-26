@@ -23,6 +23,8 @@ function updateMenuContent(LinkID){
     
 let linksMenuHtml = '';
 let matching;
+
+
 menu.forEach((menuItem) =>{
     const menucategory = menuItem.category;
     console.log(menucategory);

@@ -37,20 +37,50 @@ export const menu = [
    },
    {
     id:"dd82ca78-a18b-4e2a-9250-31e67412f98d",
-    name:"Help Me Choose",
-    image:"/build/images/menu/Mega-Menu-Vehicles-HMC-RedBlue-LHD.png",
+    name:"Solar Roof",
+    image:"/build/images/menu/Mega-Menu-Energy-Solar-Roof.png",
     category:"Energy"
    },
    {
     id:"dd82ca78-a18b-4e2a-9250-31e67412f98d",
-    name:"Help Me Choose",
-    image:"/build/images/menu/Mega-Menu-Vehicles-HMC-RedBlue-LHD.png",
+    name:"Solar Panel",
+    image:"/build/images/menu/Mega-Menu-Energy-Solar-Panels.png",
     category:"Energy"
    },
    {
     id:"dd82ca78-a18b-4e2a-9250-31e67412f98d",
-    name:"Help Me Choose",
-    image:"/build/images/menu/Mega-Menu-Vehicles-HMC-RedBlue-LHD.png",
+    name:"Powerwall",
+    image:"/build/images/menu/Mega-Menu-Energy-Powerwall-US.png",
     category:"Energy"
+   },
+   {
+    id:"dd82ca78-a18b-4e2a-9250-31e67412f98d",
+    name:"Megapack",
+    image:"/build/images/menu/Mega-Menu-Energy-Megapack.png",
+    category:"Energy"
+   },
+   {
+    id:"dd82ca78-a18b-4e2a-9250-31e67412f98d",
+    name:"Supercharging",
+    image:"/build/images/menu/Mega-Menu-Charging-Supercharging-NA.png",
+    category:"Charging"
+   },
+   {
+    id:"dd82ca78-a18b-4e2a-9250-31e67412f98d",
+    name:"Home-Charging",
+    image:"/build/images/menu/Mega-Menu-Charging-Home-Charging.png",
+    category:"Charging"
+   },
+   {
+    id:"dd82ca78-a18b-4e2a-9250-31e67412f98d",
+    name:"Charging",
+    image:"/build/images/menu/Mega-Menu-Charging-Charging.png",
+    category:"Charging"
+   },
+   {
+    id:"dd82ca78-a18b-4e2a-9250-31e67412f98d",
+    name:"Supercharging",
+    image:"/build/images/menu/Mega-Menu-Charging-Supercharging-NA.png",
+    category:"Shop"
    },
 ]
