@@ -5,6 +5,12 @@
 .links-toggle{
     @apply absolute bg-white h-auto w-full;
 }
+.link-menu-view{
+    @apply border-r-2 grid grid-cols-4 gap-8;
+}
+.link-discover-view{
+    @apply flex items-center justify-center  w-full;
+}
 @font-face {
     font-family:'TESLA' ;
     src: url(/build/fonts/TESLA.ttf);
