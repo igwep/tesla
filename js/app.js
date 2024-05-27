@@ -25,7 +25,11 @@ let linksMenuHtml = '';
 let matching;
 if(LinkID === 'Discover'){
     linkMenu.classList.remove('border-r-2');
+    linkMenu.classList.remove('link-menu-view');
     linksLinks.classList.add('hidden');
+    linkMenu.classList.add('link-discover-view');
+    
+
 
 
     linksMenuHtml += ` <div class="w-full p-8">
@@ -67,18 +71,20 @@ menu.forEach((menuItem) =>{
     if(LinkID.trim() === menucategory.trim()){
         linksLinks.classList.remove('hidden');
         linkMenu.classList.add('border-r-2');
+        linkMenu.classList.add('link-menu-view');
+        linkMenu.classList.remove('link-discover-view');
 
         
         matching = menuItem;
         linksMenuHtml += `
-    <div class="flex flex-col gap-5 items-center">
-                    <div class="w-44">
+    <div class="flex flex-col gap-3 items-center w-[45%]  p-2">
+                    <div class="w-full">
                         <img src="${matching.image}" alt="" class="w-full">
                     </div>
-                    <div class="text-center">
+                    <div class="text-center text-gray-500">
                         <div><p>${matching.name}</p></div>
-                        <div class="flex gap-3 underline text-gray-400">
-                            <a href="">Learn</a>
+                        <div class="flex gap-3 underline  text-gray-700">
+                            <a href="" class="text-blue-400">Learn</a>
                             <a href="">Order</a>
                         </div>
                     </div>

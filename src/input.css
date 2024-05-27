@@ -6,7 +6,7 @@
     @apply absolute bg-white h-auto w-full;
 }
 .link-menu-view{
-    @apply border-r-2 grid grid-cols-4 gap-8;
+    @apply border-r-2 grid grid-cols-4 gap-8 w-[50%] ml-28 p-4;
 }
 .link-discover-view{
     @apply flex items-center justify-center  w-full;
