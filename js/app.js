@@ -1,7 +1,7 @@
 import { menu } from "./menu.js";
 const linkHead = document.querySelector('.link-head');
 const linkMenu = document.querySelector('.links-menu');
-
+const linksLinks =  document.querySelector('.links-links');
 let LinkID;
 
 
@@ -24,6 +24,9 @@ function updateMenuContent(LinkID){
 let linksMenuHtml = '';
 let matching;
 if(LinkID === 'Discover'){
+    linkMenu.classList.remove('border-r-2');
+    linksLinks.classList.add('hidden');
+
 
     linksMenuHtml += ` <div class="w-full p-8">
     <div class="flex items-center text-start w-full justify-center  ">
@@ -62,6 +65,9 @@ menu.forEach((menuItem) =>{
     console.log(menucategory);
     
     if(LinkID.trim() === menucategory.trim()){
+        linksLinks.classList.remove('hidden');
+        linkMenu.classList.add('border-r-2');
+
         
         matching = menuItem;
         linksMenuHtml += `
