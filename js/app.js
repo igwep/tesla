@@ -23,8 +23,40 @@ function updateMenuContent(LinkID){
     
 let linksMenuHtml = '';
 let matching;
+if(LinkID === 'Discover'){
+
+    linksMenuHtml += ` <div class="w-full p-8">
+    <div class="flex items-center text-start w-full justify-center  ">
+        <div class="flex justify-center w-full gap-20 mt-6">
+            <div class="p-2 w-28 flex flex-col text-nowrap">
+                <a href="" class="p-1 mb-4 text-gray-500 hover:underline"> Resources</a>
+                <a href="" class="p-1 hover:underline">Customer Stories</a>
+                <a href="" class="p-1 hover:underline">Demo Drive</a>
+                <a href="" class="p-1 hover:underline">Insurance</a>
+                <a href="" class="p-1 hover:underline">Video Guides</a>
+                <a href="" class="p-1 hover:underline">Customer Stories</a>
+            </div>
+           <div class="p-2 w-28 flex flex-col text-nowrap ">
+            <a href="" class="p-1 mb-4 text-gray-500 hover:underline">Location services</a>
+            <a href="" class="p-1 hover:underline">Events</a>
+            <a href="" class="p-1 hover:underline">Find Us</a>
+            <a href="" class="p-1 hover:underline">Find a collision Center</a>
+           </div>
+           <div class="p-2 w-28 flex flex-col text-nowrap">
+            <a href="" class="p-1 mb-4 text-gray-500 hover:underline">Find a collision</a>
+            <a href="" class="p-1 hover:underline">Find a Certified Installer</a>
+            <a href="" class="p-1 hover:underline">About</a>
+            <a href="" class="p-1 hover:underline">Investor Relations</a>
+           </div>
+        </div>
+        
+    </div>
+</div>
+    `
+}
 
 
+else{
 menu.forEach((menuItem) =>{
     const menucategory = menuItem.category;
     console.log(menucategory);
@@ -48,6 +80,7 @@ menu.forEach((menuItem) =>{
     `;
     }
 });
+}
 linkMenu.innerHTML = linksMenuHtml;
 
 
