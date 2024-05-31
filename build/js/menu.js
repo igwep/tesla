@@ -83,4 +83,22 @@ export const menu = [
     image:"/build/images/menu/Mega-Menu-Charging-Supercharging-NA.png",
     category:"Shop"
    },
+   {
+      id:"dd82ca78-a18b-4e2a-9250-31e67412f98d",
+      name:"Vehicle Accessories",
+      image:"/build/images/menu/Mega-Menu-Shop-Vehicle-Accessories.png",
+      category:"Shop"
+     },
+     {
+      id:"dd82ca78-a18b-4e2a-9250-31e67412f98d",
+      name:"Lifestyle",
+      image:"/build/images/menu/Mega-Menu-Shop-Lifestyle.png",
+      category:"Shop"
+     },
+     {
+      id:"dd82ca78-a18b-4e2a-9250-31e67412f98d",
+      name:"Apparel",
+      image:"/build/images/menu/Mega-Menu-Shop-Apparel.png",
+      category:"Shop"
+     },
 ]
