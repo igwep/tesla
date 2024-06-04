@@ -141,14 +141,14 @@ document.querySelector('.menu-btn').addEventListener('click', () =>{
     const mobileLink = document.querySelector('.mobile-link');
     bodyContent.classList.add('hidden');
     mobileLink.classList.toggle('opacity-100');
-    mobileLink.classList.remove('hidden');
+  
 
-})
+});
 document.querySelector('.x-btn').addEventListener('click', () =>{
     const bodyContent = document.querySelector('.main-body');
     const mobileLink = document.querySelector('.mobile-link');
     bodyContent.classList.remove('hidden');
-    mobileLink.classList.add('hidden');
+
     mobileLink.classList.toggle('opacity-100');
 
-})
+});
