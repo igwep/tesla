@@ -11,6 +11,7 @@
 .link-discover-view{
     @apply flex items-center justify-center   w-full;
 }
+
 @font-face {
     font-family:'TESLA' ;
     src: url(/build/fonts/TESLA.ttf);

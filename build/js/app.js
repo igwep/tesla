@@ -1,38 +1,42 @@
 import { menu } from "./menu.js";
-
 const linkHead = document.querySelector('.link-head');
 const linkMenu = document.querySelector('.links-menu');
 const linksLinks = document.querySelector('.links-links');
 let LinkID;
-
 document.querySelectorAll('.links').forEach((link) => {
     link.addEventListener('mouseover', (e) => {
         linkHead.classList.add('links-toggle');
         document.querySelector('.example').classList.remove('hidden');
         LinkID = e.currentTarget.dataset.linkId;
         updateMenuContent(LinkID);
+        const items = document.querySelectorAll('.item');
+        items.forEach((item, index) => {
+            setTimeout(() => {
+                item.style.opacity = 1;
+                item.style.transform = 'translateY(0)';
+            }, index * 100); // Adjust the timing as needed
+        });
+
     });
     linkHead.addEventListener('mouseleave', () => {
         linkHead.classList.remove('links-toggle');
         document.querySelector('.example').classList.add('hidden');
     });
 });
-
 function generateMenuContent(LinkID) {
     let linksMenuHtml = '';
     let matching;
-
     menu.forEach((menuItem) => {
         const menucategory = menuItem.category;
         if (LinkID.trim() === menucategory.trim()) {
             matching = menuItem;
             linksMenuHtml += `
-                <div class="flex flex-col gap-3 items-center p-2">
+                <div class="flex flex-col gap-3 items-center p-2 item">
                     <div class="w-44">
                         <img src="${matching.image}" alt="" class="w-full">
                     </div>
                     <div class="text-center">
-                        <div><p>${matching.name}</p></div>
+                        <div class="font-semibold"><p>${matching.name}</p></div>
                         <div class="flex gap-3 underline text-gray-400">
                             <a href="" class="">Learn</a>
                             <a href="">Order</a>
@@ -42,13 +46,10 @@ function generateMenuContent(LinkID) {
             `;
         }
     });
-
     return linksMenuHtml;
 }
-
 function updateMenuContent(LinkID) {
     let linkslinksHtml = '';
-
     if (LinkID === 'Discover') {
         linkMenu.classList.remove('border-r-2');
         linkMenu.classList.remove('link-menu-view');
@@ -86,9 +87,7 @@ function updateMenuContent(LinkID) {
         linkMenu.classList.add('link-menu-view');
         linkMenu.classList.remove('link-discover-view');
         linksLinks.classList.remove('hidden');
-
         linkMenu.innerHTML = generateMenuContent(LinkID);
-
         if (LinkID === 'Energy') {
             linkslinksHtml = `
                 <div class="flex flex-col gap-3">
@@ -100,7 +99,7 @@ function updateMenuContent(LinkID) {
                     <a href="" class="hover:underline">Commercial</a>
                     <a href="" class="hover:underline">Utilities</a>
                 </div>`;
-        } else if (LinkID === 'Charging') {
+        } else if (LinkID === 'Charging'){
             linkslinksHtml = `
                 <div class="flex flex-col gap-3">
                     <a href="" class="hover:underline">Help Me Charge</a>
@@ -134,7 +133,22 @@ function updateMenuContent(LinkID) {
                     <a href="" class="hover:underline">Roadster</a>
                 </div>`;
         }
-
         linksLinks.innerHTML = linkslinksHtml;
     }
 }
+document.querySelector('.menu-btn').addEventListener('click', () =>{
+    const bodyContent = document.querySelector('.main-body');
+    const mobileLink = document.querySelector('.mobile-link');
+    bodyContent.classList.add('hidden');
+    mobileLink.classList.toggle('opacity-100');
+    mobileLink.classList.remove('hidden');
+
+})
+document.querySelector('.x-btn').addEventListener('click', () =>{
+    const bodyContent = document.querySelector('.main-body');
+    const mobileLink = document.querySelector('.mobile-link');
+    bodyContent.classList.remove('hidden');
+    mobileLink.classList.add('hidden');
+    mobileLink.classList.toggle('opacity-100');
+
+})
