@@ -136,19 +136,65 @@ function updateMenuContent(LinkID) {
         linksLinks.innerHTML = linkslinksHtml;
     }
 }
-document.querySelector('.menu-btn').addEventListener('click', () =>{
+document.querySelector('.menu-btn').addEventListener('click', () => {
     const bodyContent = document.querySelector('.main-body');
     const mobileLink = document.querySelector('.mobile-link');
-    bodyContent.classList.add('hidden');
-    mobileLink.classList.toggle('opacity-100');
-  
 
+    // Remove the 'hidden' class to start the transition
+    mobileLink.classList.remove('hidden');
+    setTimeout(() => {
+        mobileLink.classList.add('opacity-100');
+    }, 10);  // Small delay to allow for class application before transition starts
+
+    // Hide the main body content after the transition
+    setTimeout(() => {
+        bodyContent.classList.add('hidden');
+    }, 300);  // Match this to the CSS transition duration
+});
+
+document.querySelector('.x-btn').addEventListener('click', () => {
+    const bodyContent = document.querySelector('.main-body');
+    const mobileLink = document.querySelector('.mobile-link');
+
+    // Remove the 'opacity-100' class to start the transition
+    mobileLink.classList.remove('opacity-100');
+
+    // Show the main body content after the transition
+    setTimeout(() => {
+        bodyContent.classList.remove('hidden');
+    }, 300);  // Match this to the CSS transition duration
+
+    // Add the 'hidden' class after the transition completes
+    setTimeout(() => {
+        mobileLink.classList.add('hidden');
+    }, 310);  // Slightly longer than the transition duration to ensure it completes
+});
+
+
+
+
+
+
+/* document.querySelector('.menu-btn').addEventListener('click', () =>{
+    const bodyContent = document.querySelector('.main-body');
+    const mobileLink = document.querySelector('.mobile-link');
+    console.log('p')
+    mobileLink.classList.toggle('opacity-100');
+    if( mobileLink.classList.contains('hidden')){
+        bodyContent.classList.add('hidden');
+        mobileLink.classList.remove('hidden');
+       
+    }
 });
 document.querySelector('.x-btn').addEventListener('click', () =>{
     const bodyContent = document.querySelector('.main-body');
     const mobileLink = document.querySelector('.mobile-link');
-    bodyContent.classList.remove('hidden');
 
     mobileLink.classList.toggle('opacity-100');
-
-});
+    if( !mobileLink.classList.contains('hidden')){
+        bodyContent.classList.remove('hidden');
+        console.log(bodyContent.classList)
+        mobileLink.classList.add('hidden');
+        
+    }
+}); */
