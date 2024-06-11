@@ -152,16 +152,116 @@ document.querySelector('.menu-btn').addEventListener('click', () => {
     }, 300);  // Match this to the CSS transition duration
 });
 
+
+document.querySelectorAll('.link-mobile').forEach((link)=>{
+    link.addEventListener('click', ()=>{
+        const mobilelinksCont = document.querySelector('.links-mobile-container');
+        const itemCont = document.querySelector('.itemsCont');
+        mobilelinksCont.classList.add('hidden');
+        itemCont.classList.remove('hidden');
+        const itemsContainer = document.querySelector('.linksmobile-itemsCont');
+        
+       const linkId = link.dataset.mobileId;
+       let matching;
+       let linkMobileHtml = '';
+       let mobileLinksLinks = '';
+       menu.forEach((item) =>{
+    const menucategory = item.category;
+    
+    if(menucategory === linkId){
+        matching = item;
+        linkMobileHtml += `
+        <div class="flex flex-col gap-3 items-center p-2 ">
+                    <div class="w-44">
+                        <img src="${matching.image}" alt="" class="w-full">
+                    </div>
+                    <div class="text-center">
+                        <div class="font-semibold"><p>${matching.name}</p></div>
+                        <div class="flex gap-3 underline text-gray-400">
+                            <a href="" class="">Learn</a>
+                            <a href="">Order</a>
+                        </div>
+                    </div>
+                </div>
+        `;
+        /* code to change category name start  */
+        const categoryName = document.querySelector('.category-name');/* category name */
+        const categoryCont = document.querySelector('.category-name-container');
+        categoryName.textContent = `${matching.category}`;
+        if(categoryCont.classList.contains('hidden')){
+            console.log('p');
+            categoryCont.classList.remove('hidden');
+        }
+         /* code to change category name end */
+        const itemsContainer = document.querySelector('.linksmobile-itemsCont');
+        itemsContainer.innerHTML = linkMobileHtml;
+        if(itemsContainer.classList.contains('hidden')){/* unhides it item from discover */
+            itemsContainer.classList.remove('hidden')
+        }
+      
+    };
+    const linkslinksMobile = document.querySelector('.mobileLinksLinks');
+    linkslinksMobile.classList.add('hidden')
+    const border = document.querySelector('.border-v');/* for border */
+        border.classList.remove('hidden');
+       
+       })
+       if(linkId === 'Discover'){
+        const linkslinksMobile = document.querySelector('.mobileLinksLinks');
+        linkslinksMobile.classList.remove('hidden')
+        const border = document.querySelector('.border-v');
+         const itemsContainer = document.querySelector('.linksmobile-itemsCont');
+        itemsContainer.classList.add('hidden');
+        border.classList.add('hidden')
+        mobileLinksLinks += `  
+        <div class="flex flex-col  w-full font-semibold ">
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Demo Drive</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Insurance</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Video Guides</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Customer Stories</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Events</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Find us</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Find a collision Center</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Find a Certified Installer</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>About</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Careers</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Investor Relations</span>
+       
+    </div>
+        `;
+        linkslinksMobile.innerHTML = mobileLinksLinks;
+        
+      }
+    })
+})
+
+
+
+
+/* code for x button */
 document.querySelector('.x-btn').addEventListener('click', () => {
     const bodyContent = document.querySelector('.main-body');
     const mobileLink = document.querySelector('.mobile-link');
-
+    const mobilelinksCont = document.querySelector('.links-mobile-container');
+    const itemsContainer = document.querySelector('.itemsCont');
+    
+   
     // Remove the 'opacity-100' class to start the transition
     mobileLink.classList.remove('opacity-100');
 
     // Show the main body content after the transition
     setTimeout(() => {
         bodyContent.classList.remove('hidden');
+        if(!itemsContainer.classList.contains('hidden')){
+            itemsContainer.classList.add('hidden');
+            mobilelinksCont.classList.remove('hidden');
+            /* code for remove category name start */
+    const categoryCont = document.querySelector('.category-name-container');
+    if(!categoryCont.classList.contains('hidden')){
+        categoryCont.classList.add('hidden');
+    }
+    /* code for remove category name end */
+        }
     }, 300);  // Match this to the CSS transition duration
 
     // Add the 'hidden' class after the transition completes
@@ -169,32 +269,3 @@ document.querySelector('.x-btn').addEventListener('click', () => {
         mobileLink.classList.add('hidden');
     }, 310);  // Slightly longer than the transition duration to ensure it completes
 });
-
-
-
-
-
-
-/* document.querySelector('.menu-btn').addEventListener('click', () =>{
-    const bodyContent = document.querySelector('.main-body');
-    const mobileLink = document.querySelector('.mobile-link');
-    console.log('p')
-    mobileLink.classList.toggle('opacity-100');
-    if( mobileLink.classList.contains('hidden')){
-        bodyContent.classList.add('hidden');
-        mobileLink.classList.remove('hidden');
-       
-    }
-});
-document.querySelector('.x-btn').addEventListener('click', () =>{
-    const bodyContent = document.querySelector('.main-body');
-    const mobileLink = document.querySelector('.mobile-link');
-
-    mobileLink.classList.toggle('opacity-100');
-    if( !mobileLink.classList.contains('hidden')){
-        bodyContent.classList.remove('hidden');
-        console.log(bodyContent.classList)
-        mobileLink.classList.add('hidden');
-        
-    }
-}); */
