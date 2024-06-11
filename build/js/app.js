@@ -184,12 +184,12 @@ document.querySelectorAll('.link-mobile').forEach((link)=>{
                     </div>
                 </div>
         `;
+        
         /* code to change category name start  */
         const categoryName = document.querySelector('.category-name');/* category name */
         const categoryCont = document.querySelector('.category-name-container');
         categoryName.textContent = `${matching.category}`;
         if(categoryCont.classList.contains('hidden')){
-            console.log('p');
             categoryCont.classList.remove('hidden');
         }
          /* code to change category name end */
@@ -206,6 +206,7 @@ document.querySelectorAll('.link-mobile').forEach((link)=>{
         border.classList.remove('hidden');
        
        })
+       backBut();
        if(linkId === 'Discover'){
         const linkslinksMobile = document.querySelector('.mobileLinksLinks');
         linkslinksMobile.classList.remove('hidden')
@@ -233,6 +234,8 @@ document.querySelectorAll('.link-mobile').forEach((link)=>{
         
       }
     })
+    
+    
 })
 
 
@@ -244,7 +247,7 @@ document.querySelector('.x-btn').addEventListener('click', () => {
     const mobileLink = document.querySelector('.mobile-link');
     const mobilelinksCont = document.querySelector('.links-mobile-container');
     const itemsContainer = document.querySelector('.itemsCont');
-    
+   
    
     // Remove the 'opacity-100' class to start the transition
     mobileLink.classList.remove('opacity-100');
@@ -261,6 +264,9 @@ document.querySelector('.x-btn').addEventListener('click', () => {
         categoryCont.classList.add('hidden');
     }
     /* code for remove category name end */
+    const backBtn = document.querySelector('.back-btn');
+    backBtn.classList.add('hidden');
+    /* code for backbutton disappearig */
         }
     }, 300);  // Match this to the CSS transition duration
 
@@ -269,3 +275,21 @@ document.querySelector('.x-btn').addEventListener('click', () => {
         mobileLink.classList.add('hidden');
     }, 310);  // Slightly longer than the transition duration to ensure it completes
 });
+/* back  button function */
+function backBut(){
+    const backBtn = document.querySelector('.back-btn');
+    backBtn.classList.remove('hidden');
+    backBtn.addEventListener('click', () =>{
+        const itemCont = document.querySelector('.itemsCont');
+        const mobilelinksCont = document.querySelector('.links-mobile-container');
+        const categoryCont = document.querySelector('.category-name-container');
+        if(!itemCont.classList.contains('hidden')){
+            itemCont.classList.add('hidden');
+            mobilelinksCont.classList.remove('hidden');
+            categoryCont.classList.add('hidden');
+
+            backBtn.classList.add('hidden');
+        }
+        
+    });
+}
