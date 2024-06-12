@@ -162,6 +162,7 @@ document.querySelectorAll('.link-mobile').forEach((link)=>{
         const itemsContainer = document.querySelector('.linksmobile-itemsCont');
         
        const linkId = link.dataset.mobileId;
+       let matchingCat;
        let matching;
        let linkMobileHtml = '';
        let mobileLinksLinks = '';
@@ -184,15 +185,8 @@ document.querySelectorAll('.link-mobile').forEach((link)=>{
                     </div>
                 </div>
         `;
-        
-        /* code to change category name start  */
-        const categoryName = document.querySelector('.category-name');/* category name */
-        const categoryCont = document.querySelector('.category-name-container');
-        categoryName.textContent = `${matching.category}`;
-        if(categoryCont.classList.contains('hidden')){
-            categoryCont.classList.remove('hidden');
-        }
-         /* code to change category name end */
+        matchingCat = matching.category;
+        categoryDisplay(matchingCat);
         const itemsContainer = document.querySelector('.linksmobile-itemsCont');
         itemsContainer.innerHTML = linkMobileHtml;
         if(itemsContainer.classList.contains('hidden')){/* unhides it item from discover */
@@ -208,12 +202,20 @@ document.querySelectorAll('.link-mobile').forEach((link)=>{
        })
        backBut();
        if(linkId === 'Discover'){
+        const categoryName = document.querySelector('.category-name');/* category name */
+        const categoryCont = document.querySelector('.category-name-container');
+        categoryName.textContent = 'Discover';
+        if(categoryCont.classList.contains('hidden')){
+            categoryCont.classList.remove('hidden');
+        }
+       
         const linkslinksMobile = document.querySelector('.mobileLinksLinks');
         linkslinksMobile.classList.remove('hidden')
         const border = document.querySelector('.border-v');
          const itemsContainer = document.querySelector('.linksmobile-itemsCont');
         itemsContainer.classList.add('hidden');
-        border.classList.add('hidden')
+        border.classList.add('hidden');
+    
         mobileLinksLinks += `  
         <div class="flex flex-col  w-full font-semibold ">
         <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Demo Drive</span>
@@ -230,8 +232,32 @@ document.querySelectorAll('.link-mobile').forEach((link)=>{
        
     </div>
         `;
+
         linkslinksMobile.innerHTML = mobileLinksLinks;
         
+        
+      }
+      else if(linkId === 'Vehicles'){
+        const  itemLinks = document.querySelector('itemLinks');
+        const linkslinksMobile = document.querySelector('.mobileLinksLinks');
+        linkslinksMobile.classList.remove('hidden');
+        linkslinksMobile.innerHTML = `
+         <div class="flex flex-col  w-full font-semibold ">
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Demo Drive</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Insurance</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Video Guides</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Customer Stories</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Events</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Find us</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Find a collision Center</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Find a Certified Installer</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>About</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Careers</span>
+        <span class="py-5 text-lg hover:bg-gray-200 px-4"><a href=""></a>Investor Relations</span>
+       
+    </div>
+        `
+
       }
     })
     
@@ -293,3 +319,13 @@ function backBut(){
         
     });
 }
+function categoryDisplay(matchingCat){
+    /* code to change category name start  */
+    const categoryName = document.querySelector('.category-name');/* category name */
+    const categoryCont = document.querySelector('.category-name-container');
+    categoryName.textContent = `${matchingCat}`;
+    if(categoryCont.classList.contains('hidden')){
+        categoryCont.classList.remove('hidden');
+    }
+     /* code to change category name end */
+  }
